@@ -7,6 +7,7 @@ for i in {workbench,whiteboard,sheet,ppt,doc,note}
 do
     cd $1/$i
     echo "开始编译${i}项目"
+    npm i
     npx vite build
     if [ $i == "workbench"]; then
         cp -r $1/$i/dist/* $2/
