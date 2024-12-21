@@ -4,7 +4,7 @@
 rm -rf $2/*
 
 # 修复原项目的目录设置错误
-mv /source/front/workbench/src/pages/Error /source/front/workbench/src/pages/error
+
 
 for i in {whiteboard,sheet,ppt,doc,note}
 do
