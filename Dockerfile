@@ -63,5 +63,7 @@ WORKDIR /app
 
 COPY --from=builder /target .
 
+EXPOSE 8080
+
 CMD ["sh", "/app/entrypoint.sh"]
 
