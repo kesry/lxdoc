@@ -29,7 +29,7 @@ bash /source/front-build.sh /source/front /target/webapp/
 
 ENV JDK_VERSION jdk8u432-b06 
 
-RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
+RUN apt install bzip2 && ARCH= && dpkgArch="$(dpkg --print-architecture)" \
 && case "${dpkgArch##*-}" in \
   amd64) ARCH='x64' ;; \
   ppc64el) ARCH='ppc64le' ;; \
