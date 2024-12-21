@@ -44,7 +44,7 @@ esac \
 && cd /env && wget https://dlcdn.apache.org//ant/binaries/apache-ant-1.10.15-bin.tar.xz \
 && wget https://archive.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz \
 && wget https://github.com/jgraph/drawio/archive/refs/tags/v24.7.17.tar.gz && tar -xzvf v24.7.17.tar.gz\
-&& cp -rf drawio-24.7.17/etc/integrate/ /source/front/flowchart/etc/
+&& cp -rf drawio-24.7.17/etc/integrate/ /source/front/flowchart/etc/ \
 && tar -xJvf apache-ant-1.10.15-bin.tar.xz && mv apache-ant-1.10.15 ant \
 && tar -xzvf apache-maven-3.3.9-bin.tar.gz && mv apache-maven-3.3.9 maven \
 && export ANT_HOME=/env/ant \
