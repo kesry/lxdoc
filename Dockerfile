@@ -13,8 +13,8 @@ COPY entrypoint.sh .
 COPY application.yaml .
 
 RUN cp entrypoint.sh /target/ && cp application.yaml /target/ && \
-cd /source && \git clone --depth=1 https://github.com/wanglin2/lx-doc.git && mv lx-doc front && cd front && \
-bash front-build.sh /source/front /target/webapp/
+cd /source && \git clone --depth=1 https://github.com/wanglin2/lx-doc.git && mv lx-doc front && \
+bash /source/front-build.sh /source/front /target/webapp/
 
 
 ENV JDK_VERSION jdk8u432-b06 
