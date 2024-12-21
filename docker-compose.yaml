@@ -1,3 +1,13 @@
 version: "3.9"
 services:
-  docker-compose
+  lx-doc:
+    container_name: "lx-doc"
+    image: 'lxdoc:latest'
+    restart: always
+    ports:
+      - '23380:8080'
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./lx-doc.conf:/etc/nginx/http.d/lx-doc.conf:ro
+      - ./lx_doc.db:/app/lx_doc.db
