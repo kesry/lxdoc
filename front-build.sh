@@ -3,6 +3,9 @@
 # 清除编译的残留文件
 rm -rf $2/*
 
+# 修复原项目的目录设置错误
+mv /source/front/workbench/src/pages/Error /source/front/workbench/src/pages/error
+
 for i in {workbench,whiteboard,sheet,ppt,doc,note}
 do
     cd $1/$i
