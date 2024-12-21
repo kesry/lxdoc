@@ -44,7 +44,7 @@ esac \
 && cd /env && wget https://dlcdn.apache.org//ant/binaries/apache-ant-1.10.15-bin.tar.xz \
 && wget https://archive.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz \
 && tar -xJvf apache-ant-1.10.15-bin.tar.xz && mv apache-ant-1.10.15 ant \
-&& tar -xjvf apache-maven-3.3.9-bin.tar.gz && mv apache-maven-3.3.9 maven \
+&& tar -xzvf apache-maven-3.3.9-bin.tar.gz && mv apache-maven-3.3.9 maven \
 && export ANT_HOME=/env/ant \
 && export JAVA_HOME=/env/java/8 && export JRE_HOME=/env/java/8/jre \
 && export MAVEN_HOME=/env/maven \
