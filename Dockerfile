@@ -49,7 +49,7 @@ esac \
 && export JAVA_HOME=/env/java/8 && export JRE_HOME=/env/java/8/jre \
 && export MAVEN_HOME=/env/maven \
 && export PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin:$MAVEN_HOME/bin \
-&& java --version && mvn -v \
+&& java -version && mvn -v \
 && cd /source/front/flowchart && npm i && npm run build \
 && cp -r /source/front/flowchart/dist /target/webapp/flowchart \
 && cd /source && git clone -b personal https://github.com/yomea/lx-doc.git --depth=1 \
