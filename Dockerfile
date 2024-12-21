@@ -12,7 +12,7 @@ COPY init.py .
 COPY entrypoint.sh .
 COPY application.yaml .
 
-RUN copy entrypoint.sh /target/ && copy application.yaml /target/ && \
+RUN cp entrypoint.sh /target/ && cp application.yaml /target/ && \
 cd /source && \git clone --depth=1 https://github.com/wanglin2/lx-doc.git && mv lx-doc front && cd front && \
 bash front-build.sh /source/front /target/webapp/
 

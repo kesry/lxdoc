@@ -9,12 +9,12 @@ do
     echo "开始编译${i}项目"
     npx vite build
     if [ $i == "workbench"]; then
-        copy -r $1/$i/dist/* $2/
+        cp -r $1/$i/dist/* $2/
     else
-        copy -r dist $2/$i
+        cp -r dist $2/$i
     fi
 done
 echo "开始编译markdown项目"
 cd $1/markdown
 node --max-old-space-size=2048 ./node_modules/.bin/vite build
-copy -r $1/markdown/dist $2/markdown
+cp -r $1/markdown/dist $2/markdown
