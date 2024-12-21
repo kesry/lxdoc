@@ -1,0 +1,12 @@
+lx:
+  doc:
+    whiteUrlList: /,/api/login,/api/register,/static/**,/assets/**,/system/error # 白名单url，配置之后将会被登录拦截器拦截
+    fileUploadPath: /upload/ # 配置文件上传的地址，单机使用时请配置
+spring:
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    druid:
+      maxActive: 5 # 最大连接池大小
+      initialSize: 1 # 初始启动的连接数
+      minIdle: 1 # 空闲时的连接数
+      url: jdbc:sqlite:/app/lx_doc.db
