@@ -31,16 +31,16 @@ ENV JDK_VERSION jdk8u432-b06
 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
 && case "${dpkgArch##*-}" in \
-  amd64) ARCH=x64 ;; \
-  ppc64el) ARCH=ppc64le ;; \
-  arm64) ARCH=aarch64 ;; \
-  armhf) ARCH=arm ;; \
-  i386) ARCH=x86-32 ;; \
+  amd64) ARCH='x64' ;; \
+  ppc64el) ARCH='ppc64le' ;; \
+  arm64) ARCH='aarch64' ;; \
+  armhf) ARCH='arm' ;; \
+  i386) ARCH='x86-32' ;; \
   *) echo "unsupported architecture"; exit 1 ;; \
 esac \
 && set -ex  \
-&& cd /env/java && wget https://github.com/adoptium/temurin8-binaries/releases/download/$JDK_VERSION/OpenJDK8U-jdk_$ARCH_linux_hotspot_8u432b06.tar.gz \
-&& tar -xzvf OpenJDK8U-jdk_$ARCH_linux_hotspot_8u432b06.tar.gz && mv $JDK_VERSION 8 \
+&& cd /env/java && wget "https://github.com/adoptium/temurin8-binaries/releases/download/$JDK_VERSION/OpenJDK8U-jdk_${ARCH}_linux_hotspot_8u432b06.tar.gz" \
+&& tar -xzvf "OpenJDK8U-jdk_${ARCH}_linux_hotspot_8u432b06.tar.gz" && mv $JDK_VERSION 8 \
 && cd /env && wget https://dlcdn.apache.org//ant/binaries/apache-ant-1.10.15-bin.tar.xz \
 && wget https://archive.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz \
 && tar -xJvf apache-ant-1.10.15-bin.tar.xz && mv apache-ant-1.10.15 ant \
