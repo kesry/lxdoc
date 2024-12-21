@@ -11,7 +11,7 @@ cd /source/lx-doc/workbench && npm i && npm run build
 FROM node:18.20-bullseye-slim as builder
 
 
-RUN apt update && apt install wget curl git python-is-python3 tree -y && mkdir -p /source /target/webapp /env/java
+RUN apt update && apt install wget curl git python-is-python3 tree xz-utils -y && mkdir -p /source /target/webapp /env/java
 
 WORKDIR /source
 
