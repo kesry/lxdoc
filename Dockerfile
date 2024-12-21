@@ -53,7 +53,7 @@ esac \
 && cd /source/front/flowchart && npm i && npm run build \
 && cp -r /source/front/flowchart/dist /target/webapp/flowchart \
 && cd /source && git clone -b personal https://github.com/yomea/lx-doc.git --depth=1 \
-&& cp -rf /source/pom.xml /source/lx-doc/pom.xml
+&& cp -rf /source/pom.xml /source/lx-doc/pom.xml \
 && cd /source/lx-doc && mvn -DskipTests -U clean package \
 && cp /source/lx-doc/lx-core/target/lx-doc.jar /target/ \
 && DB_PATH=/target/lx_doc.db DB_INIT_SQL_PATH=/source/init.sql python3 /source/init.py \
