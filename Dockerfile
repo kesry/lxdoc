@@ -1,6 +1,14 @@
+FROM node:16.20.2-bookworm as workbench
+
+RUN apt update && apt install git -y && mkdir -p /source /target/webapp
+
+WORKDIR /source
+RUN cd /source && git clone --depth=1 https://github.com/wanglin2/lx-doc.git && \
+cd /source/lx-doc/workbench && npm i && npm run build
+
+
 FROM node:18.20-bullseye-slim as builder
 
-MAINTAINER orgic@qq.com
 
 RUN apt update && apt install wget curl git python-is-python3 tree -y && mkdir -p /source /target/webapp /env/java
 
@@ -13,7 +21,7 @@ COPY entrypoint.sh .
 COPY application.yaml .
 
 RUN cp entrypoint.sh /target/ && cp application.yaml /target/ && \
-cd /source && \git clone --depth=1 https://github.com/wanglin2/lx-doc.git && mv lx-doc front && \
+cd /source && git clone --depth=1 https://github.com/wanglin2/lx-doc.git && mv lx-doc front && \
 bash /source/front-build.sh /source/front /target/webapp/
 
 
@@ -62,6 +70,8 @@ RUN apk update && apk --no-cache add nginx tzdata \
 WORKDIR /app
 
 COPY --from=builder /target .
+
+COPY --from=workbench /source/lx-doc/workbench/dist/* ./webapp/
 
 EXPOSE 8080
 

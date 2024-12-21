@@ -6,13 +6,13 @@ rm -rf $2/*
 # 修复原项目的目录设置错误
 mv /source/front/workbench/src/pages/Error /source/front/workbench/src/pages/error
 
-for i in {workbench,whiteboard,sheet,ppt,doc,note}
+for i in {whiteboard,sheet,ppt,doc,note}
 do
     cd $1/$i
     echo "开始编译${i}项目"
     npm i
     npx vite build
-    if [ $i == "workbench"]; then
+    if [ $i == "workbench" ]; then
         cp -r $1/$i/dist/* $2/
     else
         cp -r dist $2/$i
