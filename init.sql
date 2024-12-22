@@ -34,9 +34,7 @@ CREATE TABLE IF NOT EXISTS `sys_user_config`
     `user_id`        integer NOT NULL ,
     `create_at`      DATETIME    NOT NULL ,
     `update_at`      DATETIME    NOT NULL,
-    `status`         int         NOT NULL DEFAULT '0',
-    PRIMARY KEY (`id`),
-    unique `uk_user_id_config_type`(user_id, config_type)
+    `status`         int         NOT NULL DEFAULT '0'
 );
 
 CREATE TABLE IF NOT EXISTS `doc_file_folder`
