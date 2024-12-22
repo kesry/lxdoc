@@ -57,8 +57,9 @@ esac \
 && cd /source && git clone -b personal https://github.com/yomea/lx-doc.git --depth=1 \
 && cp -rf /source/pom.xml /source/lx-doc/pom.xml \
 && cd /source/lx-doc && mvn -DskipTests -U clean package \
-&& cp /source/lx-doc/lx-core/target/lx-doc.jar /target/ \
-&& DB_PATH=/target/lx_doc.db DB_INIT_SQL_PATH=/source/init.sql python3 /source/init.py \
+&& cp /source/lx-doc/lx-core/target/lx-doc.jar /target/ 
+
+RUN DB_PATH=/target/lx_doc.db DB_INIT_SQL_PATH=/source/init.sql python3 /source/init.py \
 && tree /target
 
 # 编译结束，开始创建发布镜像
