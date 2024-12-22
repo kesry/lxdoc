@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS doc_file_content
     version    int NOT NULL DEFAULT 0,
     creator_id integer NOT NULL ,
     create_at  datetime NOT NULL,
-    update_at  datetime NOT NULL ,
+    update_at  datetime NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS doc_collect_folder
