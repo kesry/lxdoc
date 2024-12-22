@@ -57,7 +57,7 @@ esac \
 
 RUN cd /source && git clone -b personal https://github.com/yomea/lx-doc.git --depth=1 \
 && cp -rf /source/pom.xml /source/lx-doc/pom.xml  \
-&& sed -i "s/NOW()/datetime('now')/i" /source/lx-doc/lx-core/src/main/resources/mybatis/*.xml
+&& sed -i "s/NOW()/datetime('now')/i" /source/lx-doc/lx-core/src/main/resources/mybatis/*.xml \
 && cd /source/lx-doc && mvn -DskipTests -U clean package \
 && cp /source/lx-doc/lx-core/target/lx-doc.jar /target/ 
 
