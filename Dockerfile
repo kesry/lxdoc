@@ -53,9 +53,9 @@ esac \
 && export PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin:$MAVEN_HOME/bin \
 && java -version && mvn -v \
 && cd /source/front/flowchart && npm i && npm run build \
-&& cp -r /source/front/flowchart/src/main /target/webapp/flowchart
+&& cp -r /source/front/flowchart/src/main /target/webapp/flowchart \
 
-RUN cd /source && git clone -b personal https://github.com/yomea/lx-doc.git --depth=1 \
+&& cd /source && git clone -b personal https://github.com/yomea/lx-doc.git --depth=1 \
 && cp -rf /source/pom.xml /source/lx-doc/pom.xml  \
 && sed -i "s/NOW()/datetime('now')/i" /source/lx-doc/lx-core/src/main/resources/mybatis/*.xml \
 && cd /source/lx-doc && mvn -DskipTests -U clean package \
