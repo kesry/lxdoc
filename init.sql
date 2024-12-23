@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS sys_attachment
     name       varchar(256)          DEFAULT NULL,
     path       varchar(512) NOT NULL,
     remark     varchar(512)          DEFAULT NULL,
-    size       integer NOT NULL DEFAULT ,
+    size       integer NOT NULL DEFAULT 0,
     version    int NOT NULL DEFAULT 0,
     creator_id integer NOT NULL ,
     create_at  DATETIME     NOT NULL,
