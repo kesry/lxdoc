@@ -54,7 +54,6 @@ esac \
 && java -version && mvn -v \
 && cd /source/front/flowchart && npm i && npm run build \
 && cp -r /source/front/flowchart/src/main /target/webapp/flowchart \
-
 && cd /source && git clone -b personal https://github.com/yomea/lx-doc.git --depth=1 \
 && cp -rf /source/pom.xml /source/lx-doc/pom.xml  \
 && sed -i "s/NOW()/datetime('now')/i" /source/lx-doc/lx-core/src/main/resources/mybatis/*.xml \
