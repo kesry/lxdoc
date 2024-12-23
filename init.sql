@@ -5,10 +5,10 @@ CREATE TABLE IF NOT EXISTS sys_user_info
     account   varchar(32)  NOT NULL ,
     password  varchar(256) NOT NULL,
     avatar    varchar(1024)         DEFAULT NULL,
-    create_at DATETIME     NOT NULL ,
-    version   int NOT NULL DEFAULT ,
+    create_at DATETIME     NOT NULL  ,
+    version   int NOT NULL DEFAULT 0,
     update_at DATETIME     NOT NULL ,
-    status    int          NOT NULL DEFAULT 
+    status    int          NOT NULL DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS sys_attachment
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS doc_collect_folder
     name      varchar(128) NOT NULL,
     user_id   integer NOT NULL,
     create_at DATETIME    NOT NULL,
-    status    int         NOT NULL DEFAULT 
+    status    int         NOT NULL DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS doc_recycle
