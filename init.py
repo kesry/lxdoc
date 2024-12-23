@@ -18,7 +18,6 @@ if __name__ == "__main__":
     cursor = conn.cursor()
     with open(db_script, mode="r") as f:
         cursor.executescript(f.read())
-    cursor.commit()
     cursor.close()
     conn.close()
     
