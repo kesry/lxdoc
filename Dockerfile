@@ -21,6 +21,7 @@ COPY init.py .
 COPY entrypoint.sh .
 COPY application.yaml .
 COPY pom.xml .
+COPY core.pom.xml .
 
 RUN cp entrypoint.sh /target/ && cp application.yaml /target/ && \
 cd /source && git clone --depth=1 https://github.com/wanglin2/lx-doc.git && mv lx-doc front && \
