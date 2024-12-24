@@ -12,6 +12,7 @@ do
     echo "开始编译${i}项目"
     npm i
     npx vite build
+    cp -r $1/$i/dist $2/$i
 done
 echo "开始编译markdown项目"
 cd $1/markdown
