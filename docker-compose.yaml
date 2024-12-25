@@ -9,6 +9,5 @@ services:
     environment:
       - TZ=Asia/Shanghai
     volumes:
-      - ./lx-doc.conf:/etc/nginx/http.d/lx-doc.conf:ro
       - ./lx_doc.db:/app/lx_doc.db
       - ./upload:/upload/

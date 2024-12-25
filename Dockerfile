@@ -22,6 +22,7 @@ COPY entrypoint.sh .
 COPY application.yaml .
 COPY pom.xml .
 COPY core.pom.xml .
+COPY lx-doc.conf .
 
 RUN cp entrypoint.sh /target/ && cp application.yaml /target/ && \
 cd /source && git clone --depth=1 https://github.com/wanglin2/lx-doc.git && mv lx-doc front && \
@@ -74,13 +75,15 @@ RUN apk update && apk --no-cache add nginx tzdata \
 && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 && echo "Asia/Shanghai" > /etc/timezone \
 && apk del tzdata \
-&& mkdir -p /app
+&& mkdir -p /app /run/nginx
 
 WORKDIR /app
 
 COPY --from=builder /target .
 
 COPY --from=workbench /source/lx-doc/workbench/dist ./webapp/
+
+RUN cp /app/lx-doc.conf /etc/nginx/conf.d/
 
 EXPOSE 8080
 
