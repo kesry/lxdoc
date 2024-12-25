@@ -80,7 +80,7 @@ WORKDIR /app
 
 COPY --from=builder /target .
 
-COPY --from=workbench /source/lx-doc/workbench/dist/* ./webapp/
+COPY --from=workbench /source/lx-doc/workbench/dist ./webapp/
 
 EXPOSE 8080
 
