@@ -83,7 +83,7 @@ COPY --from=builder /target .
 
 COPY --from=workbench /source/lx-doc/workbench/dist ./webapp/
 
-RUN cp /app/lx-doc.conf /etc/nginx/conf.d/
+COPY --from=builder /source/lx-doc.conf /etc/nginx/conf.d/
 
 EXPOSE 8080
 
