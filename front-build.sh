@@ -6,7 +6,7 @@ rm -rf $2/*
 # 修复原项目的目录设置错误
 
 
-for i in {whiteboard,sheet,ppt,doc,note}
+for i in {whiteboard,sheet,ppt,doc,note,mind-map}
 do
     cd $1/$i
     echo "开始编译${i}项目"
