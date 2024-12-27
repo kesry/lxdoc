@@ -10,6 +10,9 @@ for i in {whiteboard,sheet,ppt,doc,note,mind-map}
 do
     cd $1/$i
     echo "开始编译${i}项目"
+    if [ $i == "mind-map" ]; then
+        mv public/index.html .
+    fi
     npm i
     npx vite build
     cp -r $1/$i/dist $2/$i
