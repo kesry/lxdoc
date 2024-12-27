@@ -86,6 +86,7 @@ function build_front_from_shell() {
     # 编译workbench
     echo "-----------------正在编译workbench-----------------"
     PATH=$OLD_PATH:$BASE_DIR/$ENV_DIR/node/16/bin
+    cd $BASE_DIR/$TEMP_CACHE/front/workbench
     npm i
     npm run build
     cp -rf dist/* $BASE_DIR/$TARGET_DIR
@@ -202,7 +203,7 @@ function build_all_from_shell() {
 
 
 
-if [ $1 == "clean" ]; then
+if [ "${1}" == "clean" ]; then
     rm -rf $BASE_DIR/$TEMP_CACHE/*
     rm -rf $BASE_DIR/$ENV_DIR/*
     rm -rf $BASE_DIR/$TARGET_DIR/*
@@ -211,9 +212,9 @@ else
     rm -rf $BASE_DIR/$ENV_DIR/*
     rm -rf $BASE_DIR/$TARGET_DIR/*
     if command -v apt-get &> /dev/null && [ -d /etc/apt ]; then
-        apt update -y && apt install tar git -y
+        apt update -y && apt install tar git xz-utils -y
     elif command -v yum &> /dev/null && [ -d /etc/yum.repos.d ]; then
-        yum update -y && yum install tar git -y
+        yum update -y && yum install tar git xz-utils -y
     else
         echo "Only supports 'apt-get' and 'yum' "
         exit 1
