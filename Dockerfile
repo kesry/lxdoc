@@ -5,7 +5,9 @@ RUN apt update && apt install git -y && mkdir -p /source /target/webapp
 WORKDIR /source
 RUN cd /source && git clone --depth=1 https://github.com/wanglin2/lx-doc.git && \
 mv /source/lx-doc/workbench/src/pages/Error /source/lx-doc/workbench/src/pages/error && \
-cd /source/lx-doc/workbench && npm i && npm run build
+cd /source/lx-doc/workbench && npm i && npm run build && cp /source/lx-doc/workbench/dist/* /target/webapp/ \
+&& cd /source/lx-doc/mind-map/ && npm i && npm run build && cp /source/lx-doc/mind-map/dist /target/webapp/mind-map
+
 
 
 FROM node:18.20-bullseye-slim as builder
@@ -81,7 +83,7 @@ WORKDIR /app
 
 COPY --from=builder /target .
 
-COPY --from=workbench /source/lx-doc/workbench/dist ./webapp/
+COPY --from=workbench /target/webapp/ ./webapp/
 
 COPY --from=builder /source/lx-doc.conf /etc/nginx/conf.d/
 
