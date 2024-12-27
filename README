@@ -25,5 +25,5 @@ TARGET=all BUILD_ENV=shell bash build.sh
                 2. env 清除环境文件
                 3. front 清除前端编译的文件
                 4. source 清除源代码文件
-    2) help: 显示帮助信息"
+    2) help: 显示帮助信息
 '''
