@@ -294,9 +294,9 @@ elif [ "${1}" == "help" ]; then
     echo -e "\t1) clean: 从shell中清除源码，环境或者编译好的文件，option four为空时，默认清除所有编译的中间文件"
     echo -e  "\t\toption four"
     echo -e  "\t\t\t1. back 清除后端文件"
-    echo -e  "\t\t\t1. env 清除环境文件"
-    echo -e  "\t\t\t1. front 清除前端编译的文件"
-    echo -e  "\t\t\t1. source 清除源代码文件"
+    echo -e  "\t\t\t2. env 清除环境文件"
+    echo -e  "\t\t\t3. front 清除前端编译的文件"
+    echo -e  "\t\t\t4. source 清除源代码文件"
     echo -e "\t2) help: 显示帮助信息"
 
 else

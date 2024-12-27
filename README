@@ -1,1 +1,29 @@
 ### 理想文档编译脚本
+
+#### 快速开始
+
+'''shell
+TARGET=all BUILD_ENV=shell bash build.sh
+'''
+
+#### 脚本说明
+'''txt
+用法：TARGET=[option one] BUILD_ENV=[option two] bash build.sh [option three] [option four]
+    option one: 可选值。
+        1) all: 编译全部（默认值）
+        2) font: 编译前端
+        3) back: 编译后台
+
+    option two: 可选值。
+        1) shell: 从shell中编译源代码（默认值）
+        2) docker: 用docker环境编译源代码
+
+    option three: 可选值。clean|help 
+        1) clean: 从shell中清除源码，环境或者编译好的文件，option four为空时，默认清除所有编译的中间文件
+            option four
+                1. back 清除后端文件
+                2. env 清除环境文件
+                3. front 清除前端编译的文件
+                4. source 清除源代码文件
+    2) help: 显示帮助信息"
+'''
