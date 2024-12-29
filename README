@@ -1,1 +1,8 @@
 ### 理想文档编译脚本
+
+#### 一键启动
+
+```shell
+# 克隆完仓库，进入文件夹，执行以下脚本，可以直接生成一个docker镜像，
+docker build -t lxdoc:latest .
+```
