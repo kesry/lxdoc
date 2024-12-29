@@ -2,12 +2,12 @@
 
 #### 快速开始
 
-'''shell
+```shell
 TARGET=all BUILD_ENV=shell bash build.sh
-'''
+```
 
 #### 脚本说明
-'''txt
+```txt
 用法：TARGET=[option one] BUILD_ENV=[option two] bash build.sh [option three] [option four]
     option one: 可选值。
         1) all: 编译全部（默认值）
@@ -26,4 +26,4 @@ TARGET=all BUILD_ENV=shell bash build.sh
                 3. front 清除前端编译的文件
                 4. source 清除源代码文件
     2) help: 显示帮助信息
-'''
+```
